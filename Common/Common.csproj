@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Certificates\CertificateFormatter.cs" />
+    <Compile Include="Certificates\CertificateManager.cs" />
     <Compile Include="IAccountManagement.cs" />
     <Compile Include="IAuthenticationService.cs" />
     <Compile Include="IAuthenticationServiceManagement.cs" />
