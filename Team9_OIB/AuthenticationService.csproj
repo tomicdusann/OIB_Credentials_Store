@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6F93EF4-99BE-44F7-98FE-BCBF2F2B3AF4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Team9_OIB</RootNamespace>
-    <AssemblyName>Team9_OIB</AssemblyName>
+    <RootNamespace>AuthenticationService</RootNamespace>
+    <AssemblyName>AuthenticationService</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -45,10 +45,16 @@
   <ItemGroup>
     <Compile Include="Certificates\CertificateFormatter.cs" />
     <Compile Include="Certificates\CertificateManager.cs" />
+    <Compile Include="Config\ConfigurationManager.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Exceptions\InvalidGroupException.cs" />
+    <Compile Include="Exceptions\InvalidUserException.cs" />
+    <Compile Include="Groups\Groups.cs" />
     <Compile Include="IAccountManagement.cs" />
     <Compile Include="IAuthenticationService.cs" />
     <Compile Include="IAuthenticationServiceManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

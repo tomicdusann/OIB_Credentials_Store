@@ -54,7 +54,7 @@ namespace CredentialsStore
                 Console.WriteLine("Certificate check failed. Please provide the correct certificates.\n");
                 hostCredentialsStore.Abort(); //close the other open host in case of error
             }
-            hostAuthenticationServiceManagement.Open();
+            
 
             Console.WriteLine($"Credentials store service successfully started by [{WindowsIdentity.GetCurrent().User}] -> " + WindowsIdentity.GetCurrent().Name + ".\n");
 

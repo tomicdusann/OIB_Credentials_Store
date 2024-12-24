@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -11,7 +12,8 @@ namespace Common
     public interface IAccountManagement
     {
         [OperationContract]
-        void InitialFunction();
-        //TO DO: Implement
+        [FaultContract(typeof(InvalidGroupException))]
+        [FaultContract(typeof(InvalidUserException))]
+        void CreateAccount(string username, string password);
     }
 }

@@ -17,9 +17,9 @@ namespace Client
             factory = this.CreateChannel();
         }
 
-        public void InitialFunction()
+        public void CreateAccount(string username, string password)
         {
-            throw new NotImplementedException();
+            factory.CreateAccount(username, password);
         }
     }
 }
