@@ -46,6 +46,7 @@
     <Compile Include="Certificates\CertificateFormatter.cs" />
     <Compile Include="Certificates\CertificateManager.cs" />
     <Compile Include="Config\ConfigurationManager.cs" />
+    <Compile Include="Cryptography\SecretKey.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Exceptions\InvalidGroupException.cs" />
     <Compile Include="Exceptions\InvalidUserException.cs" />
