@@ -79,6 +79,28 @@ namespace Client
                                     Console.WriteLine(e.Message);
                                     break;
                                 }
+                            case "3":
+                                try
+                                {
+                                    Console.Write("Account username: ");
+                                    username = Console.ReadLine();
+                                    credentialsStoreProxy.DeleteAccount(username);
+                                    Console.WriteLine("Account successfully deleted.\n");
+                                    username = "";
+                                    break;
+                                }
+                                catch (FaultException<InvalidGroupException> ex)
+                                {
+                                    Console.WriteLine(ex.Detail.exceptionMessage);
+                                    username = "";
+                                    break;
+                                }
+                                catch (FaultException<InvalidUserException> ex)
+                                {
+                                    Console.WriteLine(ex.Detail.exceptionMessage);
+                                    username = "";
+                                    break;
+                                }
                         }
 
                     } while (menu != "quit");
