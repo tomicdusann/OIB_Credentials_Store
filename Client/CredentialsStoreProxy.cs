@@ -21,5 +21,10 @@ namespace Client
         {
             factory.CreateAccount(username, password);
         }
+
+        public void DeleteAccount(string username) 
+        { 
+            factory.DeleteAccount(username);
+        }
     }
 }

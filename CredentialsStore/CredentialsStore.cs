@@ -36,5 +36,24 @@ namespace CredentialsStore
             else
                 throw new FaultException<InvalidGroupException>(new InvalidGroupException("Invalid Group permissions, please contact your system administrator if you think this is a mistake.\n"));
         }
+
+        public void DeleteAccount(string username)
+        {
+            if (Thread.CurrentPrincipal.IsInRole(Groups.AdminUser))
+            {
+                List<User> users = handler.getUsers();
+                if ((users.FindIndex(o => o.GetUsername() == username) != -1))
+                {
+                    users.RemoveAt(users.FindIndex(o => o.GetUsername() == username));
+                    handler.addUsers(users);
+
+                    Console.WriteLine($"Account - {username} successfully deleted.");
+                }
+                else
+                    throw new FaultException<InvalidUserException>(new InvalidUserException("That username does not exists, please try again.\n"));
+            }
+            else
+                throw new FaultException<InvalidGroupException>(new InvalidGroupException("Invalid Group permissions, please contact your system administrator if you think this is a mistake.\n"));
+        }
     }
 }
