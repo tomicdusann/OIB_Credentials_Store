@@ -20,5 +20,15 @@ namespace Common
         [FaultContract(typeof(InvalidGroupException))]
         [FaultContract(typeof(InvalidUserException))]
         void DeleteAccount(string username);
+
+        [OperationContract]
+        [FaultContract(typeof(InvalidGroupException))]
+        [FaultContract(typeof(InvalidUserException))]
+        void EnableAccount(string username);
+
+        [OperationContract]
+        [FaultContract(typeof(InvalidGroupException))]
+        [FaultContract(typeof(InvalidUserException))]
+        void DisableAccount(string username);
     }
 }
