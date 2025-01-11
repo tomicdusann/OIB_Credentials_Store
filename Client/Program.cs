@@ -101,6 +101,50 @@ namespace Client
                                     username = "";
                                     break;
                                 }
+                            case "4":
+                                try
+                                {
+                                    Console.Write("Account username: ");
+                                    username = Console.ReadLine();
+                                    credentialsStoreProxy.DisableAccount(username);
+                                    Console.WriteLine("Account successfully disabled.\n");
+                                    username = "";
+                                    break;
+                                }
+                                catch (FaultException<InvalidGroupException> ex)
+                                {
+                                    Console.WriteLine(ex.Detail.exceptionMessage);
+                                    username = "";
+                                    break;
+                                }
+                                catch (FaultException<InvalidUserException> ex)
+                                {
+                                    Console.WriteLine(ex.Detail.exceptionMessage);
+                                    username = "";
+                                    break;
+                                }
+                            case "5":
+                                try
+                                {
+                                    Console.Write("Account username: ");
+                                    username = Console.ReadLine();
+                                    credentialsStoreProxy.EnableAccount(username);
+                                    Console.WriteLine("Account successfully enabled.\n");
+                                    username = "";
+                                    break;
+                                }
+                                catch (FaultException<InvalidGroupException> ex)
+                                {
+                                    Console.WriteLine(ex.Detail.exceptionMessage);
+                                    username = "";
+                                    break;
+                                }
+                                catch (FaultException<InvalidUserException> ex)
+                                {
+                                    Console.WriteLine(ex.Detail.exceptionMessage);
+                                    username = "";
+                                    break;
+                                }
                         }
 
                     } while (menu != "quit");

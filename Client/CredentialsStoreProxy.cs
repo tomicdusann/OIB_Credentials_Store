@@ -26,5 +26,15 @@ namespace Client
         { 
             factory.DeleteAccount(username);
         }
+
+        public void EnableAccount(string username)
+        {
+            factory.EnableAccount(username);
+        }
+
+        public void DisableAccount(string username)
+        {
+            factory.DisableAccount(username);
+        }
     }
 }
