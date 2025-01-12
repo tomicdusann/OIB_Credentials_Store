@@ -11,7 +11,6 @@ namespace Common
     public interface IAuthenticationServiceManagement
     {
         [OperationContract]
-        void InitialFunction();
-        //TO DO: Implement
+        int ValidateCredentials(byte[] username, byte[] password, byte[] signature);
     }
 }
