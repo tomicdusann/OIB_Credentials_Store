@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -11,7 +12,14 @@ namespace Common
     public interface IAuthenticationService
     {
         [OperationContract]
-        void InitialFunction();
-        //TO DO: Implement
+        [FaultContract(typeof(InvalidGroupException))]
+        int Login(string username, string password);
+
+        [OperationContract]
+        [FaultContract(typeof(InvalidGroupException))]
+        int Logout(string username);
+
+        [OperationContract]
+        int CheckIn(string username);
     }
 }

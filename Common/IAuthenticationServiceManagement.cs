@@ -12,5 +12,9 @@ namespace Common
     {
         [OperationContract]
         int ValidateCredentials(byte[] username, byte[] password, byte[] signature);
+        [OperationContract]
+        int ResetUserOnLogOut(byte[] username, byte[] signature);
+        [OperationContract]
+        int CheckIn(byte[] username, byte[] signature);
     }
 }

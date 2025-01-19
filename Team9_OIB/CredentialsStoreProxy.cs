@@ -50,5 +50,15 @@ namespace AuthenticationService
         {
             return factory.ValidateCredentials(username, password, signature);
         }
+
+        public int ResetUserOnLogOut(byte[] username, byte[] signature)
+        {
+            return factory.ResetUserOnLogOut(username, signature);
+        }
+
+        public int CheckIn(byte[] username, byte[] signature)
+        {
+            return factory.CheckIn(username, signature);
+        }
     }
 }
