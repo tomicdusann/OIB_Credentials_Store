@@ -97,7 +97,23 @@ namespace CredentialsStore
 
         public void LockAccount(string username)
         {
-            throw new NotImplementedException();
+            if (Thread.CurrentPrincipal.IsInRole(Groups.AdminUser))
+            {
+                List<User> users = handler.getUsers();
+                if ((users.FindIndex(o => o.GetUsername() == username) != -1))
+                {
+                    users[users.FindIndex(o => o.GetUsername() == username)].SetLocked(true);
+                    users[users.FindIndex(o => o.GetUsername() == username)].SetLockedTime();
+                    handler.addUsers(users);
+
+                    Console.WriteLine($"Account - {username} succesfully locked.");
+                }
+                else
+                    throw new FaultException<InvalidUserException>(new InvalidUserException("That username does not exists, please try again.\n"));
+            }
+            else
+                throw new FaultException<InvalidGroupException>(new InvalidGroupException("Invalid Group permissions, please contact your system administrator if you think this is a mistake.\n"));
         }
+    
     }
 }
