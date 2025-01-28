@@ -17,11 +17,19 @@ namespace Client
             factory = this.CreateChannel();
         }
 
-        public void InitialFunction()
+        public int CheckIn(string username)
         {
-            throw new NotImplementedException();
+            return factory.CheckIn(username);
         }
 
-        //TO DO:
+        public int Login(string username, string password)
+        {
+            return factory.Login(username, password);
+        }
+
+        public int Logout(string username)
+        {
+            return factory.Logout(username);
+        }
     }
 }

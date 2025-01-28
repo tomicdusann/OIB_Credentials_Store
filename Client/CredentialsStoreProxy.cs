@@ -36,5 +36,10 @@ namespace Client
         {
             factory.DisableAccount(username);
         }
+
+        public void LockAccount(string username)
+        {
+            factory.LockAccount(username);
+        }
     }
 }
