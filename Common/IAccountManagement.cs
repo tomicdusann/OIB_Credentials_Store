@@ -24,6 +24,11 @@ namespace Common
         [OperationContract]
         [FaultContract(typeof(InvalidGroupException))]
         [FaultContract(typeof(InvalidUserException))]
+        void LockAccount(string username);
+
+        [OperationContract]
+        [FaultContract(typeof(InvalidGroupException))]
+        [FaultContract(typeof(InvalidUserException))]
         void EnableAccount(string username);
 
         [OperationContract]

@@ -95,5 +95,9 @@ namespace CredentialsStore
                 throw new FaultException<InvalidGroupException>(new InvalidGroupException("Invalid group permissions, please contact your system administrator if you think this is a mistake.\n"));
         }
 
+        public void LockAccount(string username)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
