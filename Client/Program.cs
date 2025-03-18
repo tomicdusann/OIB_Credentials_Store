@@ -232,6 +232,22 @@ namespace Client
                                     username = "";
                                     break;
                                 }
+
+                            case "7":
+                                //if (username != "")
+                                //{
+                                Console.WriteLine("Input username: ");
+                                username = Console.ReadLine();
+                                authenticationProxy.Logout(username);
+                                username = "";
+                                Console.WriteLine("You have successfully logged out.\n");
+                                //}
+                                //else
+                                Console.WriteLine("You have to be logged in first.\n");
+                                break;
+                            default:
+                                Console.WriteLine("Ivalid option, please try again or contact your server administrator.\n");
+                                break;
                         }
 
                     } while (menu != "quit");
