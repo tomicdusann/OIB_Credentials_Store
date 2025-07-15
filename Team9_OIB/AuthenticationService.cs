@@ -48,7 +48,7 @@ namespace Team9_OIB
 
                     byte[] data = new byte[outUsername.Length + outPassword.Length];
                     Buffer.BlockCopy(outUsername, 0, data, 0, outUsername.Length);
-                    Buffer.BlockCopy(outPassword, 0, data, 0, outPassword.Length);
+                    Buffer.BlockCopy(outPassword, 0, data, outUsername.Length, outPassword.Length);
 
                     byte[] signature = DigitalSignatureHelper.GenerateDigitalSignature(data);
 

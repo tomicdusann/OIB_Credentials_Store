@@ -21,7 +21,7 @@ namespace Client
 
             //Windows auth tcp protocol init
 
-            binding.Security.Mode = SecurityMode.Transport;
+            binding.Security.Mode = SecurityMode.Message;
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             binding.Security.Transport.ProtectionLevel = ProtectionLevel.EncryptAndSign;
 
@@ -234,15 +234,13 @@ namespace Client
                                 }
 
                             case "7":
-                                //if (username != "")
-                                //{
+                                
                                 Console.WriteLine("Input username: ");
                                 username = Console.ReadLine();
                                 authenticationProxy.Logout(username);
                                 username = "";
                                 Console.WriteLine("You have successfully logged out.\n");
-                                //}
-                                //else
+                                
                                 Console.WriteLine("You have to be logged in first.\n");
                                 break;
                             default:

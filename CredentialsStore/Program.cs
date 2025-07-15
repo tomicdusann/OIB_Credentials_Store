@@ -23,7 +23,7 @@ namespace CredentialsStore
 
             // Windows auth protocol init
 
-            bindingClient.Security.Mode = SecurityMode.Transport;
+            bindingClient.Security.Mode = SecurityMode.Message;
             bindingClient.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             bindingClient.Security.Transport.ProtectionLevel = ProtectionLevel.EncryptAndSign;
 

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
 using System.ServiceModel;
 using System.Text;
@@ -25,7 +26,7 @@ namespace Team9_OIB
 
             // Windows auth protocol config 
 
-            bindingClient.Security.Mode = SecurityMode.Transport;
+            bindingClient.Security.Mode = SecurityMode.Message;
             bindingClient.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             bindingClient.Security.Transport.ProtectionLevel = ProtectionLevel.EncryptAndSign;
 
